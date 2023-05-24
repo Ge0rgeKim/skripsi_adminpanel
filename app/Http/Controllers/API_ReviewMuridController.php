@@ -27,10 +27,10 @@ class API_ReviewMuridController extends Controller
             $review->save();
             return response()->json(['message' => 'success', 'data' => $review]);
         }else{
-            return response()->json(['message' => 'Data Review Sudah Ada.', 'data' => $cek_review]);
+            return response()->json(['message' => 'Data Review Sudah Ada.', 'data' => '']);
         }
-        return response()->json(['message' => 'Tolong dicoba lagi.', 'data' => $cek_review]);
     }
+    
     public function update(Request $request, $id){
 
     }

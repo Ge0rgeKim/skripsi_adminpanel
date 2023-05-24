@@ -26,9 +26,8 @@ class API_ReportMuridController extends Controller
             $report->save();
             return response()->json(['message' => 'success', 'data' => $report]);
         }else{
-            return response()->json(['message' => 'Data Report Sudah Ada.', 'data' => $cek_report]);
+            return response()->json(['message' => 'Data Report Sudah Ada.', 'data' => '']);
         }
-        return response()->json(['message' => 'Tolong dicoba lagi.', 'data' => $cek_report]);
     }
     public function update(Request $request, $id){
 

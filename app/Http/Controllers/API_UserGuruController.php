@@ -28,6 +28,7 @@ class API_UserGuruController extends Controller
             $user_guru->lokasi = $request->lokasi;
             $user_guru->status_sesi = 0;
             $user_guru->status_akun = 0;
+            $user_guru->kontak = "https://wa.me/+6281354958833";
             if($request->hasFile('image')){
                 $file = $request->file('image');
                 $filename = md5($file . strtotime('now')) . '.' . $file->getClientOriginalExtension();
@@ -42,9 +43,8 @@ class API_UserGuruController extends Controller
             $user_guru->save();
             return response()->json(['message' => 'success', 'data' => $user_guru]);
         }else{
-            return response()->json(['message' => 'Akun Guru Sudah Ada.', 'data' => $cek_guru]);
+            return response()->json(['message' => 'Akun Guru Sudah Ada.', 'data' => '']);
         }
-        return response()->json(['message' => 'Tolong dicoba lagi.', 'data' => $cek_guru]);
     }
 
     public function update(Request $request,$id){
@@ -64,6 +64,7 @@ class API_UserGuruController extends Controller
         if($request->status_sesi == "2"){
             $user_guru->status_sesi = 2;
         }
+        $user_guru->kontak = $user_guru->kontak;
         $user_guru->status_akun = $user_guru->status_akun;
         $user_guru->ktp = $user_guru->ktp;
         $user_guru->save();

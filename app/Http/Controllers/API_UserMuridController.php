@@ -20,7 +20,7 @@ class API_UserMuridController extends Controller
     }
 
     public function store(Request $request){
-        $cek_murid = murid::where('email', $request->email)->get();
+        $cek_murid = user_murid::where('email', $request->email)->get();
         if($cek_murid->isEmpty()){
             $user_murid = new user_murid();
             $user_murid->username = $request->username;
@@ -57,9 +57,8 @@ class API_UserMuridController extends Controller
             $transaksi_sesi->save();
             return response()->json(['message' => 'success', 'data' => $user_murid]);
         }else{
-            return response()->json(['message' => 'Akun Murid Sudah Ada.', 'data' => $cek_murid]);
+            return response()->json(['message' => 'Akun Murid Sudah Terdaftar.', 'data' => '']);
         }
-        return response()->json(['message' => 'Tolong dicoba lagi.', 'data' => $cek_murid]);
     }
 
     public function update(Request $request,$id){

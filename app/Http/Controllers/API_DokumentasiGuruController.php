@@ -34,9 +34,8 @@ class API_DokumentasiGuruController extends Controller
             $dokumentasi->save();
             return response()->json(['message' => 'success', 'data' => $dokumentasi]);
         }else{
-            return response()->json(['message' => 'Data Dokumentasi Sudah Ada.', 'data' => $cek_dokumentasi]);
+            return response()->json(['message' => 'Data Dokumentasi Sudah Ada.', 'data' => '']);
         }
-        return response()->json(['message' => 'Tolong dicoba lagi.', 'data' => $cek_dokumentasi]);
     }
     public function update(Request $request, $id){
 

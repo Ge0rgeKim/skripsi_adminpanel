@@ -27,7 +27,7 @@ class API_SesiGuruController extends Controller
             return response()->json(['message' => 'success', 'data' => $sesi]);
         }
         else{
-            return response()->json(['message' => 'Jadwal Sesi Sudah Ada.', 'data' => $cek_sesi]);
+            return response()->json(['message' => 'Jadwal Sesi Sudah Ada.', 'data' => '']);
         
         }
     }

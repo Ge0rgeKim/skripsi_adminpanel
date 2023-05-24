@@ -13,6 +13,7 @@ use App\Http\Controllers\API_ReviewMuridController;
 use App\Http\Controllers\API_SaldoUserController;
 use App\Http\Controllers\API_TransaksiSaldoController;
 use App\Http\Controllers\API_TransaksiSesiController;
+use App\Http\Controllers\API_LoginUsers;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -94,3 +95,7 @@ Route::post('/user_murid',[API_UserMuridController::class,'store']);
 Route::get('/user_murid/{id}',[API_UserMuridController::class,'show']);
 Route::put('/user_murid/{id}',[API_UserMuridController::class,'update']);
 Route::delete('/user_murid/{id}',[API_UserMuridController::class,'destroy']);
+
+//Login Reset ETC
+Route::put('/login_user/reset_user',[API_LoginUsers::class,'reset']);
+Route::post('/login_user/login',[API_LoginUsers::class,'login']);

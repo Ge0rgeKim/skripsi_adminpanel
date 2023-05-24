@@ -26,6 +26,7 @@ class UserGuruAPIController extends Controller
         $user_guru->mata_pelajaran = $user_guru->mata_pelajaran;
         $user_guru->lokasi = $user_guru->lokasi;
         $user_guru->status_sesi = $user_guru->status_sesi;
+        $user_guru->kontak = $user_guru->kontak;
         $user_guru->ktp = $user_guru->ktp;
         if($request->status == "1"){
             $user_guru->status_akun = 1;

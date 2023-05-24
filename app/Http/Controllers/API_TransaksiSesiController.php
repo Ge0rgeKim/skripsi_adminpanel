@@ -20,6 +20,10 @@ class API_TransaksiSesiController extends Controller
         $transaksi_sesi = transaksi_sesi::where('id_murid',$id)->get();
         return response()->json(['message' => 'success', 'data' => $transaksi_sesi]);
     }
+    public function historyguru($id){
+        $transaksi_sesi = transaksi_sesi::where('id_guru',$id)->get();
+        return response()->json(['message' => 'success', 'data' => $transaksi_sesi]);
+    }
     public function store(Request $request, $id){
         $temp_sesi = transaksi_sesi::where('id_murid',$request->id_murid)->get();
         $ctr = transaksi_sesi::where('id_murid',$request->id_murid)->count();

@@ -28,6 +28,7 @@ Route::get('/transaksi_sesi',[API_TransaksiSesiController::class,'index']);
 Route::post('/transaksi_sesi/{id}',[API_TransaksiSesiController::class,'store']);
 Route::get('/transaksi_sesi/{id}',[API_TransaksiSesiController::class,'show']);
 Route::get('/transaksi_sesi/murid/{id}',[API_TransaksiSesiController::class,'historymurid']);
+Route::get('/transaksi_sesi/guru/{id}',[API_TransaksiSesiController::class,'historyguru']);
 Route::put('/transaksi_sesi/{id}',[API_TransaksiSesiController::class,'update']);
 Route::delete('/transaksi_sesi/{id}',[API_TransaksiSesiController::class,'destroy']);
 

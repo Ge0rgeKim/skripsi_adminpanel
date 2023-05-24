@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class API_MataPelajaranController extends Controller
 {
     public function index(){
-        $mata_pelajaran = mata_pelajaran::all();
+        $mata_pelajaran = mata_pelajaran::get("mata_pelajaran");
         return response()->json(['message' => 'success', 'data' => $mata_pelajaran]);
     }
     
